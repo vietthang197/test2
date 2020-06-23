@@ -1,0 +1,70 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:vms="http://vms.neo">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <vms:query>
+            <!--Optional:-->
+            <vms:Service>login_service</vms:Service>
+            <!--Optional:-->
+            <vms:Provider>crud</vms:Provider>
+            <!--Optional:-->
+            <vms:ParamSize>1</vms:ParamSize>
+            <!--Optional:-->
+            <vms:P1>admin</vms:P1>
+            <!--Optional:-->
+            <vms:P2></vms:P2>
+            <!--Optional:-->
+            <vms:P3></vms:P3>
+            <!--Optional:-->
+            <vms:P4></vms:P4>
+            <!--Optional:-->
+            <vms:P5></vms:P5>
+            <!--Optional:-->
+            <vms:P6></vms:P6>
+            <!--Optional:-->
+            <vms:P7></vms:P7>
+            <!--Optional:-->
+            <vms:P8></vms:P8>
+            <!--Optional:-->
+            <vms:P9></vms:P9>
+            <!--Optional:-->
+            <vms:P10></vms:P10>
+            <!--Optional:-->
+            <vms:P11></vms:P11>
+            <!--Optional:-->
+            <vms:P12></vms:P12>
+            <!--Optional:-->
+            <vms:P13></vms:P13>
+            <!--Optional:-->
+            <vms:P14></vms:P14>
+            <!--Optional:-->
+            <vms:P15></vms:P15>
+            <!--Optional:-->
+            <vms:P16></vms:P16>
+            <!--Optional:-->
+            <vms:P17></vms:P17>
+            <!--Optional:-->
+            <vms:P18></vms:P18>
+            <!--Optional:-->
+            <vms:P19></vms:P19>
+            <!--Optional:-->
+            <vms:P20></vms:P20>
+            <!--Optional:-->
+            <vms:P21></vms:P21>
+            <!--Optional:-->
+            <vms:P22></vms:P22>
+            <!--Optional:-->
+            <vms:P23></vms:P23>
+            <!--Optional:-->
+            <vms:P24></vms:P24>
+            <!--Optional:-->
+            <vms:P25></vms:P25>
+        </vms:query>
+    </soapenv:Body>
+</soapenv:Envelope>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+<soapenv:Body>
+    <ns:queryResponse xmlns:ns="http://vms.neo">
+        <ns:return>[{"PASSWORD":"e10adc3949ba59abbe56e057f20f883e"}]</ns:return>
+    </ns:queryResponse>
+</soapenv:Body>
+</soapenv:Envelope>

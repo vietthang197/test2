@@ -1,0 +1,75 @@
+#configugre app-coherencegw
+app:
+  url: http://localhost:7101/BS_Coherence/PipelineProxyService
+  update-coherence: always            # always : luon luon cap nhat, changedb : khi db thay doi, off: khong cap nhat
+server:
+  port: 18080
+  address: 0.0.0.0
+
+spring:
+  cache:
+    jcache:
+      config: classpath:ehcache.xml
+  main:
+    banner-mode: console
+
+  # define Datasource
+  datasource:
+    #    url: jdbc:oracle:thin:@127.0.0.1:1521:orcl
+    url: jdbc:oracle:thin:@10.252.10.251:1521:fusion
+    username: vas_platform
+    password: vas
+
+    #    url: jdbc:oracle:thin:@(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1522))(ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1523))(LOAD_BALANCE = yes)(FAILOVER = yes))(CONNECT_DATA =(SERVER = DEDICATED)(SERVICE_NAME=vasdb)(failover_mode=(type=session)(method=basic))))
+    #    username: ftpfile
+    #    password: ftpfile123
+
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+
+    # HikariCP settings
+    # link document https://github.com/brettwooldridge/HikariCP#configuration-knobs-baby
+    hikari:
+      connection-timeout: 20000       #maximum number of milliseconds that a client will wait for a connection
+      minimum-idle: 1                 #minimum number of idle connections maintained by HikariCP in a connection pool
+      maximum-pool-size: 3            #maximum pool size
+      idle-timeout: 10000             #maximum idle time for connection
+      max-lifetime: 1000              # maximum lifetime in milliseconds of a connection in the pool after it is closed.
+      pool-name: SpringCoherenceGW
+      data-source-properties:
+        v$session.program=App-CoherenceGW
+
+  # configure JPA & Hibernate
+  jpa:
+    show-sql: false
+    hibernate:
+      ddl-auto: none
+    properties:
+      show-sql: false
+      hibernate.dialect: org.hibernate.dialect.Oracle10gDialect
+      hibernate.id.new_generator_mappings: false
+      format_sql: false
+      use_sql: false
+      hibernate.generate_statistics: false
+
+  #configure security
+  #  security:
+  #    basic:
+  #      authorize-mode: ADMIN
+  #      enabled: true
+  #      path: /**
+  #      realm: CoherenceGW
+  #    user:
+  #      name: admin
+  #      password: password
+  #      roles:
+  #      - ADMIN
+
+  ## define logging
+  #logging:
+  #  level:
+  #    com.neo.cohgw: INFO
+  #    org.hibernate.SQL: OFF
+  #    org.hibernate.stat: OFF
+  #    com.zaxxer.hikari.HikariConfig: OFF
+  #    org.springframework.boot.autoconfigure: OFF
+  #    org.hibernate.type.descriptor.sql.BasicBinder: OFF
