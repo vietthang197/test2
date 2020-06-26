@@ -23,7 +23,7 @@ public class THGiaoDich {
             String sDate = formatPattern.format(now);
             String from_date = "";
             String to_date = "";
-            String name = "bangkegiaodichbanra_" + sDate;
+            String name = "tong_hop_giao_dich_" + sDate;
             int cellNum = 8;
             Workbook wb = new XSSFWorkbook();
             Sheet sheet = wb.createSheet();
@@ -249,7 +249,7 @@ public class THGiaoDich {
             cellTotalMoneyAfterTax.setCellStyle(styleSumMoney);
 
             //System.out.println(name);
-            File fileNew = new File("D:/apache_poi_export/" + "demo.xlsx");
+            File fileNew = new File("D:/apache_poi_export/" + ".xlsx");
 
             if (fileNew.exists()) {
                 fileNew.delete();
@@ -257,8 +257,9 @@ public class THGiaoDich {
             fileNew.createNewFile();
             FileOutputStream fileOut = new FileOutputStream(fileNew);
             wb.write(fileOut);
-            fileOut.close();
             wb.close();
+            fileOut.close();
+            fileNew.
         } catch (Exception ex) {
             ex.printStackTrace();
         }
